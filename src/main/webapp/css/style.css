@@ -35,19 +35,27 @@ body {
     font-size: 1.5rem;
 }
 
-form {
+form, .login-form, .register-form {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    width: 350px;
-    max-width: 350px;
-    height: 270px;
     box-sizing: border-box;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -135px 0 0 -175px;
     z-index: 9999;
+}
+
+.login-form {
+    width: 350px;
+    height: 270px;
+    margin: -120px 0 0 -175px;
+}
+
+.register-form {
+    width: 350px;
+    height: 420px;
+    margin: -195px 0 0 -175px;
 }
 
 input, select {
@@ -58,6 +66,20 @@ input, select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+.label-ed {
+    float: left;
+    font-size: 0.7rem;
+    font-family: inherit;
+    color: gray;
+}
+
+.error-message {
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: red;
 }
 
 .btn {
@@ -96,9 +118,10 @@ input, select {
 }
 
 label {
+    font-family: inherit;
     font-size: 0.8rem;
     font-weight: normal;
-    font-family: inherit;
+    color: gray;
 }
 
 .footer {
