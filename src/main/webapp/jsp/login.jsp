@@ -3,19 +3,16 @@
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Игра «Быки и коровы» - Авторизация</title>
+    <title>Авторизация</title>
     <style>
-        <%@include file="/css/style.css"%>
+        <%@include file="/css/styles.css"%>
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="image"></div>
-        <div class="text">Игра «Быки и коровы»</div>
-    </div>
+    <%@ include file="header.jsp" %>
     <div align="center">
         <form name="login-form" class="login-form" method="POST" action="controller">
-            <input type="text" name="login" maxlength="20" placeholder="Имя пользователя" required>
+            <input type="text" name="username" maxlength="20" placeholder="Имя пользователя" required>
                 <br>
             <input type="password" name="password" maxlength="20" placeholder="Пароль" required>
             <div class="error-message">
@@ -29,9 +26,9 @@
                 <br>
             <label>Ещё не зарегистрированы?</label>
                 <br>
-            <button type="submit" name="action" value="register" class="btn-link" formnovalidate>Зарегистрироваться</button>
+            <button type="submit" name="action" value="show-register" class="btn-link" formnovalidate>Зарегистрироваться</button>
         </form>
     </div>
-    <div class="footer">Copyright &copy; 2017 «Открытый код»</div>
+    <%@ include file="footer.jsp" %>
 </body>
 </html>
