@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 
 public class ControllerServlet extends HttpServlet {
 
@@ -28,6 +29,18 @@ public class ControllerServlet extends HttpServlet {
     public void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        System.out.println("----- Request parameters -----");
+        Enumeration<String> paramNames = request.getParameterNames();
+        while (paramNames.hasMoreElements()) {
+            String paramName = paramNames.nextElement();
+            System.out.print("Parameter name: " + paramName + ", values: ");
+            String[] paramValues = request.getParameterValues(paramName);
+            for (String paramValue : paramValues) {
+                System.out.print(paramValue + "; ");
+            }
+            System.out.println();
+        }
+
         // Чтение запрашиваемого действия
         String action = request.getParameter("action");
 
@@ -46,6 +59,15 @@ public class ControllerServlet extends HttpServlet {
                 case "show-index":
                     url = "/index.jsp";
                     break;
+                case "login":
+                case "register":
+                    url = "/jsp/game.jsp";
+                    break;
+                case "check-number":
+                    // check
+                    break;
+                case "new-game":
+                    // new
                 default:
                     url = "/jsp/error.jsp";
             }
