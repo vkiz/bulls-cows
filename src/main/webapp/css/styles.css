@@ -201,7 +201,6 @@ div.tab button.active {
 }
 
 .tabcontent {
-    display: none;
     padding: 5px 10px;
     border: 1px solid #83a4c4;
     border-top: none;

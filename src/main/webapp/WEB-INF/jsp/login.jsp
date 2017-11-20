@@ -12,12 +12,12 @@
     <%@ include file="header.jsp" %>
     <div align="center">
         <form name="login-form" class="login-form" method="POST" action="controller">
-            <input type="text" name="username" maxlength="20" placeholder="Имя пользователя" required>
+            <input type="text" name="username" maxlength="32" placeholder="Имя пользователя" required>
                 <br>
-            <input type="password" name="password" maxlength="20" placeholder="Пароль" required>
+            <input type="password" name="password" maxlength="32" placeholder="Пароль" required>
             <div class="error-message">
                 <%
-                    String msg = request.getParameter("loginErrorMessage");
+                    String msg = (String) request.getAttribute("loginMessage");
                     if (msg == null || msg.trim().isEmpty()) msg = "<br>";
                 %>
                 <%= msg %>

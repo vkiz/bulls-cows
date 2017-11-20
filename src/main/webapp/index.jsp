@@ -8,7 +8,7 @@
     </style>
 </head>
 <body>
-    <%@ include file="/jsp/header.jsp" %>
+    <%@ include file="/WEB-INF/jsp/header.jsp" %>
     <div align="center">
         <form name="index-form" class="index-form" method="POST" action="controller">
             <div class="form-message">
@@ -25,6 +25,6 @@
             <button type="submit" name="action" value="show-register" class="btn-link-ind">Регистрация</button>
         </form>
     </div>
-    <%@ include file="/jsp/footer.jsp" %>
+    <%@ include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>

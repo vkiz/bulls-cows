@@ -5,25 +5,6 @@
  */
 
 /**
- * Activates the tab by its name.
- * @param evt Event
- * @param tabName Name of tab
- */
-function openTab(evt, tabName) {
-    var i, tabContent, tabLinks;
-    tabContent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabContent.length; i++) {
-        tabContent[i].style.display = "none";
-    }
-    tabLinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tabLinks.length; i++) {
-        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-/**
  * Cancels the default browser action to prevent a form request from being sent.
  * @param evt Event
  */
