@@ -58,6 +58,18 @@ public class Database {
     }
 
     /**
+     * Метод инициализирует параметры подключения к базе данных.
+     * @param dbUrl Строка подключения к базе данных
+     * @param dbUserName Имя пользователя базы данных
+     * @param dbPassword Пароль пользователя базы данных
+     */
+    public void init(String dbUrl, String dbUserName, String dbPassword) {
+        this.dbUrl = dbUrl;
+        this.dbUserName = dbUserName;
+        this.dbPassword = dbPassword;
+    }
+
+    /**
      * Метод выполняет авторизацию пользователя в приложении игры.
      * @param userName Имя пользователя
      * @param password Пароль пользователя

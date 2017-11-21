@@ -65,7 +65,7 @@ public class Game {
      * @return {@code true} - если число соответствует условию,
      *         {@code false} - если не соответствует
      */
-    private boolean isNumberMatch(int num) {
+    public boolean isNumberMatch(int num) {
         String str = String.format("%04d", num);
         // если строка - только четыре неповторяющиеся цифры
         if (str.length() == 4 && str.matches("(?!.*(.).*\\1)\\d{4}")) {
@@ -78,12 +78,14 @@ public class Game {
      * Метод проверяет введённое пользователем число.
      * Если число совпадает с загаданным, то значение поля {@link Game#guessed} становится равным {@code true}.
      * @param guess Строка введённого пользователем числа
+     * @return Количество точно угаданных цифр (быков).
+     *         Возвращаемое значение используется при вызове модульных тестов.
      */
-    public void checkGuess(String guess) {
+    public int checkGuess(String guess) {
+        int bulls = 0;
+        int cows = 0;
         if (guess.length() == 4 &&
             guess.matches("(?!.*(.).*\\1)\\d{4}")) {
-            int bulls = 0;
-            int cows = 0;
             for (int i = 0; i < 4; i++) {
                 if (guess.charAt(i) == secret.charAt(i)) {
                     bulls++;
@@ -102,6 +104,7 @@ public class Game {
             move.setCows(String.valueOf(cows));
             moves.add(move);
         }
+        return bulls;
     }
 
     /**
@@ -110,6 +113,14 @@ public class Game {
      */
     public String getSecretNumber() {
         return secret;
+    }
+
+    /**
+     * Метод устанавливает строку загаданного четырёхзначного числа.
+     * Используется при вызове модульных тестов.
+     */
+    public void setSecretNumber(String secret) {
+        this.secret = secret;
     }
 
     /**
